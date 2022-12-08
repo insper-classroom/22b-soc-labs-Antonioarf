@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+    <script>
+    setInterval(                              //Periodically 
+            function () {
+                fetch("/status").then(
+                    response => response.json()).then(resposta => {
+                        const div1 = document.getElementById("bot")
+                        const div2 = document.getElementById("led")
+                        console.log(resposta.led)
+                        if (resposta.botao == "P") {
+                            div1.textContent = "ON";
+                        }
+                        else {
+                            div1.textContent = "OFF";
+                        }
+                        if (resposta.led == 'T') {
+                            div2.textContent = "ON";
+                        }
+                        else {
+                            div2.textContent = "OFF";
+                        }
+                    }
+                    )
+            },
+            100);                                    // And do it every 500ms
+    
+    </script>
+    
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Live Streaming Demonstration</title>
+</head>
+<body>result
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8  offset-lg-2">
+            <form action="/muda" method="get">
+            <button type="submit">MUDA</button>
+            </form>
+            <h3>Status do botao</h3>
+            <h2 id="bot">oioioi</h2>
+            <h3>Status do Led</h3>
+            <h2 id="led">oioioi</h2>
+        </div>
+    </div>
+</div>
+</body>
+</html>

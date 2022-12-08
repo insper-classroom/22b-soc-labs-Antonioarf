@@ -1,0 +1,38 @@
+<script>
+
+    setInterval(                               //Periodically 
+        function () {
+            fetch("/botao").then(
+                response => response.json()).then(resposta => {
+                    const geology_div = document.getElementById("result")
+                    
+                    if (resposta.value == "A") {
+                        geology_div.textContent = "Apertado!";
+                    }
+                    else {
+                        geology_div.textContent = "Desapertado!";
+                    }
+                }
+                )
+        },
+        100);                                    // And do it every 500ms
+
+</script>
+
+<form action="/" method="post">
+
+    <h1>Mudar o status do Led:</h1>
+    <input type="submit" value="Ligar" name="statusLed" />
+    <input type="submit" value="Desligar" name="statusLed" />
+    </br></br>
+
+    <h1>Status do Botao:</h1>
+    <h2 id="result">Teste</h2>
+    {% if status == 0 %}
+    <h1></h1>
+    {% elif status == 1 %}
+    <h1> Led ligado</h1>
+    {% elif status == 2 %}
+    <h1> Led desligado</h1>
+    {% endif %}
+</form>
