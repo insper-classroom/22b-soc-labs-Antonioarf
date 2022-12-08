@@ -1,8 +1,8 @@
 # SoC e Linux embarcado
 ## Antonio Fonseca
 
-### Entrega 1:
-Pasta 1-makefile:
+## Entrega 1:
+### Pasta 1-makefile:
 o arquivo makefile define o nome do arquivo target na variavel `TARGET` e a senha do SoC na variavel `senha` 
 Para executar:
 make build arquivo.c: compila o codigo em C conforme o gcc do target e salva local
@@ -10,9 +10,10 @@ make deploy: envia os arquivos gerados no camando anterior para a pasta root@roo
 make run: executa o arquivo enviado no target
 make all arquivo.c: excecuta na sequencia os tres comandos descritos
 
-### Entrega 2:
-Pasta 2-Flask/sem_socket:
+## Entrega 2:
+### Pasta 2-Flask/sem_socket:
 A pasta sem_socket contem uma tentatida de controle do led e botao pela execução de arquivos .c via python pela biblioteca `os.system`
-Pasta 2-Flask/com_socket:
+
+### Pasta 2-Flask/com_socket:
 Todos os comandos descritos na entrega 1 tambêm estao implementados, enviando junto os arquivos '.py' e '.html' necessarios para o server em Flask
 o sistema sse inicializa automaticamente com endereço ip definido em 169.254.0.13
